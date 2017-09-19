@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/rock-paper-scissor -Dhttp.port=$PORT
+web: play run --http.port=$PORT $PLAY_OPTS
