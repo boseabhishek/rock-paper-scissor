@@ -2,30 +2,23 @@ package controllers
 
 import javax.inject._
 
-import models.{OpponentMove, StartRequest}
 import play.api.libs.json.Json
 import play.api.mvc._
+import services.RpsService
 
 @Singleton
 class DdcnBotBattleController @Inject()(service: RpsService) extends Controller {
 
-  def start = Action.async(parse.json) { implicit request =>
-    request.body.asOpt[StartRequest] match {
-      case Some(startReq) => ???
-      case None => ???
-    }
+  def start = Action {
+    Ok
   }
 
   def move = Action {
-    //random generator of r,ps,d,w
-    Ok(Json.toJson(service.generateRandomChoice))
+    Ok
   }
 
-  def opponentMove = Action.async(parse.json) { implicit request =>
-    request.body.asOpt[OpponentMove] match {
-      case Some(oppMove) => ??? //capture opponents move here and try to find a pattern
-      case None => ???
-    }
+  def opponentMove = Action {
+   Ok
   }
 
 }
